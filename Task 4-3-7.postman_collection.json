@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "cc3056b7-1b81-4930-8c7a-dbaf6ad0f899",
+		"name": "Task 4/3/7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\":{\r\n    \"username\": \"FrodoBeggins\",\r\n    \"email\": \"frodo@beggins.sheare\",\r\n    \"password\": \"theLordOfTheRings\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://conduit.productionready.io/api/users",
+					"protocol": "https",
+					"host": [
+						"conduit",
+						"productionready",
+						"io"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\":{\r\n    \"email\": \"frodo@beggins.sheare\",\r\n    \"password\": \"theLordOfTheRings\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://conduit.productionready.io/api/users/login",
+					"protocol": "https",
+					"host": [
+						"conduit",
+						"productionready",
+						"io"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTY4OTU1LCJ1c2VybmFtZSI6IkZyb2RvQmVnZ2lucyIsImV4cCI6MTYyNTg2Mjc2MH0.8rYCawMsJZoGcn99no0IVNO7XHm7yoNddlH8_YofSyc",
+						"type": "text"
+					},
+					{
+						"key": "x-api-key",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTY4OTU1LCJ1c2VybmFtZSI6IkZyb2RvQmVnZ2lucyIsImV4cCI6MTYyNTg1ODgyM30.oRmjI7aVv_NLPwOCugtpCBjyCNjFhjcjX_9kkN2LhV4",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\":{\r\n    \"bio\": \"Ваши тропы — у вас под ногами. Каждый увидит свою в должное время.\",\r\n    \"image\": \"https://img1.goodfon.ru/original/360x480/2/b1/elaydzha-vud-elijah-wood-mech.jpg\"\r\n\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://conduit.productionready.io/api/user",
+					"protocol": "https",
+					"host": [
+						"conduit",
+						"productionready",
+						"io"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
