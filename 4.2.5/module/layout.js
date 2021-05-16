@@ -9,6 +9,7 @@ export class LAYOUT {
     this.box_2 = this.createElement('div', 'box_2');
 
     this.input = this.createElement('input', 'input-text');
+    this.input.type = 'text';
     this.input.placeholder = 'Искать здесь';
 
     this.box_main.append(this.input)
@@ -52,7 +53,7 @@ export class LAYOUT {
     accountsItemsWrapper.append(accountsItems); 
     accountsItemsWrapper.append(crossImg);
 
-    this.box_2.prepend(accountsItemsWrapper);   
+    this.box_2.append(accountsItemsWrapper);   
 
     this.removeChildNodes();
 

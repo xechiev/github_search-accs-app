@@ -3,13 +3,13 @@ export class Search {
     this.layout = layout;
     this.api = api;
     
-    this.layout.input.addEventListener('keyup', this.debounce(this.searchRepositoriess.bind(this), 500));
+    this.layout.input.addEventListener('keypress', this.debounce(this.searchRepositoriess.bind(this), 500));
   }
 
   searchRepositoriess() {
     let inputValue = this.layout.input.value;
-    if(inputValue) {
-      this.api.loadAccounts(inputValue).then(res => this.updatedAccounts(res))
+    if(inputValue.length == inputValue.replace(" ", "").length) {
+        this.api.loadAccounts(inputValue).then(res => this.updatedAccounts(res))
     } else {
       this.clearAccounts();
     }
