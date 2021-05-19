@@ -5,3 +5,4 @@ import {Search} from './module/search.js';
 const api = new API();
 
 new Search(new LAYOUT(api), api)
+
