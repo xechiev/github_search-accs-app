@@ -2,17 +2,18 @@ export class Search {
   constructor(layout, api) {
     this.layout = layout;
     this.api = api;
-    
-    this.layout.input.addEventListener('keyup', this.debounce(this.searchRepositoriess.bind(this), 500));
+
+    this.layout.input.addEventListener('input', this.debounce(this.searchRepositoriess.bind(this), 250));
+
   }
 
-  searchRepositoriess() {
-    let inputValue = this.layout.input.value;
-    if(inputValue) {
-      this.api.loadAccounts(inputValue).then(res => this.updatedAccounts(res))
-    } else {
-      this.clearAccounts();
-    }
+  searchRepositoriess(e) {
+      const searchValue = e.target.value.trim();
+      if(searchValue.length) {
+         this.api.loadAccounts(searchValue).then(res => this.updatedAccounts(res))        
+      } else {
+        this.clearAccounts();
+      }
   }
 
   updatedAccounts(res) {
