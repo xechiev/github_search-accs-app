@@ -58,14 +58,20 @@ export class LAYOUT {
     this.removeChildNodes();
 
     this.removeButton();
+
+    this.box_2.removeEventListener('click', this.handler)
+
   }
 
   removeButton() {
-    this.box_2.addEventListener('click', (event) => {
+
+    let handler = function(event) {
       if (event.target.className != 'remove_button') return;
       let deleteCross = event.target.closest('.accountsItemsWrapper');
       deleteCross.remove();
-    })
+    }
+    
+    this.box_2.addEventListener('click', handler)
 
   }
 
